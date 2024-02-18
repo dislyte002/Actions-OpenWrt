@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: C526A
 
 on:
   # 在actions页面启用run workflow手动按钮，即可手工触发
