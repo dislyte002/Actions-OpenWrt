@@ -15,7 +15,7 @@ on:
   # 在workflow_dispatch下通过定义inputs设定参数，在jobs中我们则可以在github.event.inputs中取到对应的参数
   workflow_dispatch:
   # 开启API执行，即通过http请求来手工启动，其中的opened，deleted是用户自定义的事件
-  # 例如使用curl：curl -X POST -H "Accept: application/vnd.github.v4+json" https://api.github.com/repos/{namespace}/{repo_name}/dispatches -d '{"event_type":"opened"}'
+  # 例如使用curl：curl -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/{namespace}/{repo_name}/dispatches -d '{"event_type":"opened"}'
   repository_dispatch:
     types: [opened, deleted]
   schedule:
@@ -48,7 +48,7 @@ jobs:
 
     steps:
     - name: Checkout OpenWrt
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
     - name: Initialization environment
       env:
@@ -75,7 +75,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Cache
-      uses: actions/cache@v4
+      uses: actions/cache@v3
       with:
         ccache: 'true'
         prefix: ${{ github.workspace }}/openwrt
