@@ -196,10 +196,11 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
-      uses: dislyte001/delete-workflow-runs@main
+      uses: dislyte002/delete-workflow-runs@main
       with:
-        retain_days: 1
-        keep_minimum_runs: 3
+        token: ${{ secrets.AUTH_PAT }}
+        repository: ${{ github.repository }}
+        retain_days: 30
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
