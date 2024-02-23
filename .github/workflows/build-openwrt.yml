@@ -75,8 +75,9 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
   
-    - name: Cache
-      uses: actions/cache@v4.0.0
+    - name: Cache Openwrt
+      id: cache-openwrt
+      uses: actions/cache@v4
       with:
         path: openwrt
         key: ${{ github.workspace }}/openwrt
