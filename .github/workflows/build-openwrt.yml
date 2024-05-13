@@ -198,7 +198,7 @@ jobs:
     - name: Delete workflow runs
       uses: dislyte002/delete-workflow-runs@main
       with:
-        retain_days: 30
+        retain_days: 15
         keep_minimum_runs: 3
 
 
