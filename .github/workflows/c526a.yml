@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build immortalwrt
+name: Build c526a
 
 on:
   # 在actions页面启用run workflow手动按钮，即可手工触发
@@ -29,10 +29,10 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-18.06
+  REPO_URL: https://github.com/dislyte001/openwrt
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: base.config
+  CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -198,8 +198,9 @@ jobs:
     - name: Delete workflow runs
       uses: dislyte002/delete-workflow-runs@main
       with:
-        retain_days: 1
+        retain_days: 15
         keep_minimum_runs: 3
+
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
