@@ -32,11 +32,7 @@ env:
   REPO_URL: https://github.com/dislyte001/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-<<<<<<< HEAD
   CONFIG_FILE: .config
-=======
-  CONFIG_FILE: base.config
->>>>>>> parent of 58eb157 (Update build-openwrt.yml)
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
