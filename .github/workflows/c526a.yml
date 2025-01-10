@@ -19,7 +19,7 @@ on:
   repository_dispatch:
     types: [opened, deleted]
   schedule:
-    - cron: 0 20 * * *
+    - cron: 5 5 * * 5
   release:
     types: [published]
     inputs:
